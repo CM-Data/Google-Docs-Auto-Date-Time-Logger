@@ -1,0 +1,10 @@
+function onOpen(e){
+  var today = new Date();
+  if (today.getMinutes()<10){
+    var minutes=('0'+today.getMinutes())} else {var minutes= today.getMinutes()};
+  if (today.getHours()>12){
+    var time = (today.getHours() - 12) + ":" + minutes + ' PM'} else {var time = today.getHours() + ":" + minutes + ' AM'};
+  var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+ today.getFullYear();
+  var body = DocumentApp.getActiveDocument().getBody();
+  body.insertParagraph(0, date +" "+ time+":")
+}
